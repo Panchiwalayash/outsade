@@ -1,0 +1,47 @@
+body{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+nav{
+    background-color: rgb(76, 163, 245);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px;
+}
+button{
+    border-radius: 5px;
+    padding: 5px 5px;
+    background-color: rgb(147, 152, 224);
+    color: wh;
+    border: none;
+    cursor: pointer;
+    margin-left: auto;
+}
+li,a{
+    font-weight: 400;
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+}
+li{
+    list-style: none;
+    display: inline-block;
+    padding: 0px 15px;
+}
+span{
+    font-size: 25px;
+    font-weight: bold;
+    color: white;
+}
+ul{
+    background-color: rgb(179, 191, 202);
+}
+.home{
+    margin: 70px;
+}
+a:hover{
+    transition: all 0.3s ease 0s;
+    color: rgb(163, 77, 77);
+}
