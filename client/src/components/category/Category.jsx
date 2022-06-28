@@ -87,12 +87,12 @@ export default function Category() {
                      
                         </>
                     ))}
-                {categorys.map(item => (
-                    <>
-                    <h2>{item.name} product</h2>
-                    <Product  item={item}/>
-                    </>
-                    ))}
+                    {/* {categorys.map(item => (
+                        <>
+                        <h2>{item.name} product</h2>
+                        <Product  item={item}/>
+                        </>
+                        ))} */}
 
                 </div>
             </div>

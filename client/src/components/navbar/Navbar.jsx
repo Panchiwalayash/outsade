@@ -13,7 +13,7 @@ const Navbar = () => {
         <nav >
           <span>Inventory</span>
           <button className="btn" id="btn1" ><Link to="/login">Login</Link></button>
-          <button className="btn" id="btn2" ><Link to="/register">Signup</Link></button>
+          <button className="btn" id="btn2" ><Link to="/signup">Signup</Link></button>
         </nav>
       </div>
     </>

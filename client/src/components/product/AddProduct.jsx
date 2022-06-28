@@ -17,23 +17,23 @@ export default function AddProduct({item}) {
 
     }
   return (
-    <div>
+    <div >
         <div>Add Product</div>
-        <div className='Addproduct'>
+        <div >
                             <form>
-                                <div className="mb-3">
-                                    <label htmlFor="pTitle" className="form-label">name</label>
-                                    <input type="text" className="form-control" id="pTitle" name="pTitle" aria-describedby="emailHelp" value={product.pTitle} onChange={onChange} />
+                                <div >
+                                    <label htmlFor="pTitle">name</label>
+                                    <input type="text"  id="pTitle" name="pTitle"  value={product.pTitle} onChange={onChange} />
                                 </div>
-                                <div className="mb-3">
-                                    <label htmlFor="pdesc" className="form-label">pdesc</label>
-                                    <input type="text" className="form-control" id="pdesc" name="pdesc" value={product.pdesc} onChange={onChange} />
+                                <div>
+                                    <label htmlFor="pdesc">pdesc</label>
+                                    <input type="text"  id="pdesc" name="pdesc" value={product.pdesc} onChange={onChange} />
                                 </div>
                                 
                             </form>
                         </div>
-                        <div className="modal-footer">
-                            <button onClick={handleClick} type="button" className="btn btn-primary">Add It</button>
+                        <div >
+                            <button onClick={handleClick} type="button">Add It</button>
                         </div>
                     </div>
   )

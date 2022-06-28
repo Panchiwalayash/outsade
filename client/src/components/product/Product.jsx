@@ -4,13 +4,13 @@ import { useContext } from 'react'
 import CategoryContext from '../../context/notes/CategoryContext'
 import AddProduct from './AddProduct'
 import ProductItem from './ProductItem'
+import './product.css'
 
-export default function Product({item}) {
-  const id=item._id
-  const {products,getProduct,editProduct}=useContext(CategoryContext)
-  useEffect(()=>{
-     getProduct(id)
-  },[])
+export default function Product({ item }) {
+    const { products, getProduct, editProduct } = useContext(CategoryContext)
+    useEffect(() => {
+        getProduct(item._id)
+    }, [item._id])
 
     const [product, setProduct] = useState({ title: "", desc: "" });
     const ref = useRef(null);
@@ -24,20 +24,20 @@ export default function Product({item}) {
 
 
     const onChange = (e) => {
-      setProduct({ ...product, [e.target.name]: e.target.value });
+        setProduct({ ...product, [e.target.name]: e.target.value });
 
     }
     const handleClick = (e) => {
         e.preventDefault();
         refClose.current.click();
-        editProduct(product.id, product.ename, product.edesc,id)
+        editProduct(product.id, product.ename, product.edesc, item._id)
 
     }
-  return (
-    <>
-    <AddProduct item={item}/>
+    return (
+        <div className='product-container'>
+            <AddProduct item={item} />
 
-    <button ref={ref} type="button" className="btn btn-primary d-none" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <button ref={ref} type="button" className="btn btn-primary d-none" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 Launch demo modal
             </button>
 
@@ -58,7 +58,7 @@ export default function Product({item}) {
                                     <label htmlFor="desc" className="form-label">desc</label>
                                     <input type="text" className="form-control" id="desc" name="desc" value={product.desc} onChange={onChange} />
                                 </div>
-                                
+
                             </form>
                         </div>
                         <div className="modal-footer">
@@ -71,13 +71,13 @@ export default function Product({item}) {
 
 
 
-    <div className="row" style={{padding:"15px",margin:"20px"}}>
-                    {products.map(data => (
-                       <> 
-                       <ProductItem data={data} key={data._id} updateProduct={updateProduct} />
+            <div className="row" style={{ padding: "15px", margin: "20px" }}>
+                {products.map(data => (
+                    <>
+                        <ProductItem data={data} key={data._id} updateProduct={updateProduct} />
                     </>
-                    ))}
-                </div>
-</>
-  )
+                ))}
+            </div>
+        </div>
+    )
 }

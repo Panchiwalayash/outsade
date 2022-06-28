@@ -81,6 +81,7 @@ const CategoryState = (props)=>{
 
     //get product category wise
     const getProduct=async(id)=>{
+      console.log(id);
       const res=await fetch(`${host}/api/product/${id}`,{
 
         method:"GET",
@@ -105,7 +106,7 @@ const CategoryState = (props)=>{
       let json= await response.json()
      console.log(json)
       
-     setCategorys(categorys.concat(json)); 
+     setProducts(products.concat(json)); 
     }
 
     const deleteProduct=async(id)=>{
@@ -115,12 +116,12 @@ const CategoryState = (props)=>{
             'Content-Type': 'application/json'
           }
         })
-        const categoryIndex=categorys.filter(item=>{
+        const productIndex=products.filter(item=>{
           if(item._id!==id){
             return item
           }
         })
-        setCategorys(categoryIndex)
+        setProducts(productIndex)
       }
 
       const editProduct=async(id,name,desc,categoryId)=>{

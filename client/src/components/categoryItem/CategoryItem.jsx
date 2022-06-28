@@ -1,12 +1,14 @@
 import React from 'react'
 import { useContext } from 'react'
 import CategoryContext from '../../context/notes/CategoryContext'
+import Product from '../product/Product'
 
 export default function CategoryItem({item,updateCategory}) {
   
   const {deleteCategory}=useContext(CategoryContext)
   
   return (
+    <>
     <div className="col-md-6" style={{marginBottom:"20px"}}>
     <div className="card my-6">
         <div className="card-body">
@@ -25,7 +27,13 @@ export default function CategoryItem({item,updateCategory}) {
         </div>
 
     </div>
-    
+    <br /> 
+    <br />
+    <h2>{item.name} product</h2>
+                        <Product  item={item}/>
+                        
+    <br /><br /><br />
+</>    
 
   )
 }
